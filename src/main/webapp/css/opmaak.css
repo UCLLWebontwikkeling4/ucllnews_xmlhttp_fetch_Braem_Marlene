@@ -1,0 +1,56 @@
+main{ padding: 6em;}
+.newsitem{
+     border: 4px solid darkred;
+     padding: 2em;
+     border-radius: 10px;
+     margin-bottom: 2em;
+ }
+
+.author_date_newsitem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.btn{
+    background-color: darkred !important;
+    color: white !important;
+}
+
+.btn:hover{
+    background-color: white !important;
+    color: darkred !important;
+    border: 2px solid darkred !important;
+}
+
+.textarea{
+    display: flex;
+    flex-direction: column;
+}
+
+.add_form{
+    border: 4px solid darkred;
+    padding: 2em;
+    border-radius: 10px;
+    margin-top: 4em;
+}
+
+form div{margin-bottom: 1em}
+
+.reply{
+    border: 2px solid darkred;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+form{
+    border: 2px solid darkred;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
