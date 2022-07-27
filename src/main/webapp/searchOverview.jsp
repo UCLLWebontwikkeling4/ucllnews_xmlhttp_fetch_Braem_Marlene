@@ -21,7 +21,7 @@
 
     <form action="Controller">
         <div class="form-group">
-            <label for="authorSearch">Title</label>
+            <label for="authorSearch">Author</label>
             <input type="text" class="form-control" id="authorSearch" placeholder="Author">
         </div>
 
