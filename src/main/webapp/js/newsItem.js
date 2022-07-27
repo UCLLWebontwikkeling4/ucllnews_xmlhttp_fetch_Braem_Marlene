@@ -6,6 +6,18 @@ let getRandomLectorRequest = new XMLHttpRequest();
 // The request is not initialized.
 // After you have created the XMLHttpRequest object, but before you have called the open() method.
 
+/*
+// FETCH
+window.onload=getNewsitemsFetch
+function getNewsitemsFetch () {
+	fetch("Controller?command=Random")
+		.then(response => response.json())
+		.then(newsItems => showNewsItems(newsItems))
+		.then(() => setTimeout(getNewsitemsFetch, 5000))
+}
+*/
+
+// AJAX XMLHttpRequest
 function getNewsItem () {
 	getRandomLectorRequest.open("GET", "Controller?command=Random", true);
 	// 1
@@ -19,6 +31,8 @@ function getNewsItem () {
 	// 2
 	// The request has been sent.
 	// After you have called send().
+
+	//AXIOS
 	//axios.get("Controller?command=Random")
 	//	.then(response => showNewsItems(response.data))
 	//	.then(() => setTimeout(getNewsItem, 10000))
