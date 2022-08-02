@@ -5,7 +5,7 @@ public class Home extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        return "index.jsp";
+        return "overview.jsp";
     }
 
 }

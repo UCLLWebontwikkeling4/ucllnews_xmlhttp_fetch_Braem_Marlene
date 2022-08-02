@@ -1,27 +1,41 @@
 window.onload = getNewsItem;
 let refreshNeeded = false;
 
-
+let getRandomLectorRequest = new XMLHttpRequest();
 // 0
 // The request is not initialized.
 // After you have created the XMLHttpRequest object, but before you have called the open() method.
 
+/*
+// FETCH
+window.onload=getNewsitemsFetch
+function getNewsitemsFetch () {
+	fetch("Controller?command=Random")
+		.then(response => response.json())
+		.then(newsItems => showNewsItems(newsItems))
+		.then(() => setTimeout(getNewsitemsFetch, 5000))
+}
+*/
+
+// AJAX XMLHttpRequest
 function getNewsItem () {
-	//getNewsItemRequest.open("GET", "Controller?command=Random", true);
+	getRandomLectorRequest.open("GET", "Controller?command=Random", true);
 	// 1
 	// The request has been set up.
 	// After you have called the open() method, but before you have called send().
-	//getNewsItemRequest.onreadystatechange = showNewsItems(respon);
+	getRandomLectorRequest.onreadystatechange = showNewsItems;
 	// mag NIET showRandomLector() zijn
 	// want dat wordt het maar 1 keer uitgevoerd
 	// en het moet telkens wanneer de readystate van het xhr veranderd worden uitgevoerd
-	//getNewsItemRequest.send();
+	getRandomLectorRequest.send();
 	// 2
 	// The request has been sent.
 	// After you have called send().
-	axios.get("Controller?command=Random")
-		.then(response => showNewsItems(response.data))
-		.then(() => setTimeout(getNewsItem, 10000))
+
+	//AXIOS
+	//axios.get("Controller?command=Random")
+	//	.then(response => showNewsItems(response.data))
+	//	.then(() => setTimeout(getNewsItem, 10000))
 }
 
 // 3
@@ -33,7 +47,9 @@ function getNewsItem () {
 // After the request has been completed, and the response data has been completely received from the server.
 
 // callback function
-function showNewsItems (newsItems) {
+function showNewsItems () {
+	let newsItems = JSON.parse(getRandomLectorRequest.responseText);
+
 	console.log(newsItems)
 
 			let newsItemDiv = document.getElementById("newsItemDiv");
@@ -166,7 +182,7 @@ function showNewsItems (newsItems) {
 
 				}
 	}
-			//setTimeout(getNewsItem, 1000);
+			setTimeout(getNewsItem, 1000);
 		}
 
 
